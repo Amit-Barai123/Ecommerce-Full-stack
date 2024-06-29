@@ -6,11 +6,15 @@ import authRoute  from './routes/authRoute.js';
 import catRoutes from './routes/catRoutes.js'
 import ProductRoutes from './routes/ProductRoutes.js'
 import cors from 'cors'
-import path from 'path';
+import {fileURLToPath} from 'url'
+ import path from 'path';
 // configure env 
 dotenv.config();
 //database config
 ConectDb();
+//esmodule fixed
+const __filename=fileURLTOPath(import.meta.url);
+const __dirname= path.dirname(__filename);
 const app=express();
 app.use(express.json());
 app.use(morgan('dev'));
